@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Belajar Variable Javascript</h1>
+    <p id="hasil"></p>
+    
+    <script>
+        var email="rizky agetia pratama@gmail.com";
+        console.log("email" + email);
+
+        let umur = 15;
+        console.log("umur" + umur);
+
+        const sekolah= "SMK Bina NUsantara";
+        console.log("sekolah" + sekolah);
+
+        // Henampilkan Hasil Pada Elemen Html
+        document.getElementById("hasil").innerHTML =
+        "email :" + email + "<br>" +
+        "umur :" + umur + "<br>" +
+        "sekolah : " + sekolah ;
+    </script>
+</body>
+</html>

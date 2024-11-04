@@ -1,0 +1,120 @@
+<!DOCTYPE html>  
+<html lang="id">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Empat Lampu dengan Background</title>  
+    <style>  
+        .lampu-container {  
+            display: flex;  
+            flex-wrap: wrap;  
+            justify-content: center;  
+            gap: 100px; 
+            margin: 50px;  
+        }  
+        .lampu {  
+            text-align: center;  
+            padding: 45px;  
+            border-radius: 10px;  
+            width: 400px;  
+        }  
+        .bg-1 {  
+            background-image: url('../image/ruang tamu.jpg'); 
+            background-size: cover; 
+            background-position: center;  
+        }  
+        .bg-2 {  
+            background-image: url('../image/kamar.jpg'); 
+            background-size: cover; 
+            background-position: center;  
+        }  
+        .bg-3 {  
+            background-image: url('../image/kamarmandi.jpg'); 
+            background-size: cover; 
+            background-position: center;  
+        }  
+        .bg-4 {  
+            background-image: url('../image/dapur.jpg');  
+            background-size: cover; 
+            background-position: center;  
+        }  
+        img {  
+            height: 150px;  
+        }  
+        body { 
+            text-align: center; 
+            margin: 0; 
+        } 
+    </style>  
+</head>  
+<body>  
+ 
+    <!-- enampilkan judul pada kodingan lampu --> 
+    <h1>Kontrol Empat Lampu</h1> 
+ 
+    <!-- Menampilkan perpindahan ke home dan layout --> 
+    <div style="text-align: center"> 
+        <button class="btn"><a href="tabel.html"> HOME</a></button> 
+        <button class="btn"><a href="layout.html"> LAYOUT</a></button> 
+        <div class="lampu-container">  
+            <!-- Lampu 1 -->  
+            <div class="lampu bg-1">  
+                <h2>Lampu Ruang Tamu</h2> 
+                <img id="myImage1" src="../image/pic_bulboff.gif"><br> 
+                <button onclick="nyalakanLampu('myImage1', 'status1', 'timerId1')">Nyalakan Lampu</button> 
+                <p id="status1">Lampu Mati</p>  
+                <p id="timerId1"></p> <!-- Menambahkan elemen untuk timer --> 
+            </div>  
+ 
+            <!-- Lampu 2 -->  
+            <div class="lampu bg-2">  
+                <h2>Lampu Kamar Tidur</h2> 
+                <img id="myImage2" src="../image/pic_bulboff.gif"> <br> 
+                <button onclick="nyalakanLampu('myImage2', 'status2', 'timerId2')">Nyalakan Lampu</button>  
+                <p id="status2">Lampu Mati</p>  
+                <p id="timerId2"></p> <!-- Menambahkan elemen untuk timer --> 
+            </div>  
+ 
+            <!-- Lampu 3 -->  
+            <div class="lampu bg-3">  
+                <h2>Lampu Kamar Mandi</h2> 
+                <img id="myImage3" src="../image/pic_bulboff.gif"><br> 
+                <button onclick="nyalakanLampu('myImage3', 'status3', 'timerId3')">Nyalakan Lampu</button> 
+                <p id="status3">Lampu Mati</p>  
+                <p id="timerId3"></p> <!-- Menambahkan elemen untuk timer --> 
+            </div>  
+ 
+            <!-- Lampu 4 -->  
+            <div class="lampu bg-4">  
+                <h2>Lampu Dapur</h2> 
+                <img id="myImage4" src="../image/pic_bulboff.gif"><br> 
+                <button onclick="nyalakanLampu('myImage4', 'status4', 'timerId4')">Nyalakan Lampu</button> 
+                <p id="status4">Lampu Mati</p>  
+                <p id="timerId4"></p> <!-- Menambahkan elemen untuk timer --> 
+            </div>  
+        </div>  
+ 
+        <script> 
+            function nyalakanLampu(imgId, statusId, timerId) { 
+                document.getElementById(imgId).src = "../image/pic_bulbon.gif"; 
+                document.getElementById(statusId).innerText = "Lampu Menyala"; 
+ 
+                let countdown = 3; 
+                document.getElementById(timerId).innerText = "Timer: " + countdown + " detik"; 
+ 
+                let timerInterval = setInterval(function () { 
+                    countdown--;
+                    if (countdown > 0) { 
+                        document.getElementById(timerId).innerText = "Timer: " + countdown + " detik"; 
+                    } else { 
+                        clearInterval(timerInterval); 
+                        document.getElementById(timerId).innerText = ""; 
+                        document.getElementById(imgId).src = "../image/pic_bulboff.gif"; 
+                        document.getElementById(statusId).innerText = "Lampu Mati"; 
+                    } 
+                }, 1000); 
+            } 
+        </script> 
+    </div> 
+</body>  
+</html>

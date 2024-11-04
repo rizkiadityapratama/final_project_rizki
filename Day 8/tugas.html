@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mydiv"> 
+        hello world, my name is Rizki 
+      </div> 
+      <h1>this rewaard</h1> 
+      <img id="myimage" src="../image/pic_bulboff.gif" alt="gambar awal" /> 
+      <div id="mydiv"> 
+        <form action="../gabutberkarya/percobaan1.html"> 
+          <!-- //label ini untuk bagian membuat option --> 
+          <label for="fname"> Nama Depan:</label><br /> 
+          <!-- // input ini untuk bagian teks --> 
+          <input 
+            type="text" 
+            id="fname" 
+            name="fname" 
+            placeholder="Nama Depan . . ." 
+          /><br /><br /> 
+          <label for="iname">Nama Belakang:</label><br /> 
+          <input 
+            type="text" 
+            id="Iname" 
+            name="Iname" 
+            placeholder="Nama  Belakang . . ." 
+          /><br /><br /> 
+          <!-- // submit untuk mengirim data di atas --> 
+          <input type="submit" value="kirim" /> 
+        </form> 
+      </div> 
+      <script> 
+        document 
+          .getElementById("myimage") 
+          .setAttribute( 
+            "src", 
+            "https://i.pinimg.com/474x/d1/c7/07/d1c707bba83865f62ab9c115dbe028e0.jpg" 
+          ); 
+        document 
+          .getElementById("myimage") 
+          .setAttribute( 
+            "alt", 
+            "https://i.pinimg.com/474x/d1/c7/07/d1c707bba83865f62ab9c115dbe028e0.jpg" 
+          ); 
+   
+        // mengubah properti css element 
+        let div = document.getElementById("mydiv"); 
+        div.style.backgroundColor = "lightgreen"; //ubah warna latar belakang 
+        div.style.width = "200px"; //ubah lebar 
+        div.style.height = "200px"; //ubah tinggi 
+      </script>\
+</body>
+</html>

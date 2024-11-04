@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menyalakan waktu</title>
+</head>
+<body>
+    <h1>Kontrol Lampu</h1>
+    <img id="lampuImage" src="../image/pic_bulboff.gif" alt="Lampu">
+    <p id="lampuStatus">Lampu Mati</p>
+    <button onclick="trueOnLampu('lampuImage', 'lampuStatus', 'lampuTimer')">
+        Nyalakan Lampu
+    </button>
+    <p id="lampuTimer"></p>
+
+    <script>
+        function trueOnLampu(imageId, statusId, timerId) {
+        document.getElementById(imageId).src = "../image/pic_bulbon.gif";
+        document.getElementById(statusId).innerText = "Lampu Menyala";
+
+        let countdown = 3; // Mengatur timer menjadi 10 detik
+        document.getElementById(timerId).innerText =
+          "Waktu: " + countdown + " Detik";
+
+        let timerInterval = setInterval(function () {
+          countdown--;
+          if (countdown > 0) {
+            document.getElementById(timerId).innerText =
+              "Waktu: " + countdown + " Detik";
+          } else {
+            clearInterval(timerInterval); // Memperbaiki typo 'cleerInterval' menjadi 'clearInterval'
+            document.getElementById(timerId).innerText = "";
+            document.getElementById(imageId).src = "../image/pic_bulboff.gif";
+            document.getElementById(statusId).innerText = "Lampu Mati";
+          }
+        }, 1000);
+      }
+
+    </script>
+
+</body>
+</html>

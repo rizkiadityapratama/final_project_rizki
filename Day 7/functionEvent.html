@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="hasil_tambah"></p>
+    <p id="hasil_kali"></p>
+    <p id="hasil_bagi"></p>
+    <p id="hasil_kurang"></p>
+
+    <script>
+
+        // Fungsi untuk menjumlahkan dua angka
+        function tambah(a, b) {
+            return a + b;
+        }
+        let hasiltambah = tambah(10, 12);
+
+        // Fungsi untuk mengkalikan dua angka
+        function kali(a, b) {
+            return a * b;
+        }
+        let hasilkali = kali(10, 12);
+
+        // Fungsi untuk membagikan dua angka
+        function bagi(a, b) {
+            return a / b;
+        }
+        let hasilbagi = bagi(10, 12);
+        
+        // Fungsi untuk mengkurangkan dua angka
+        function kurang(a, b) {
+            return a - b;
+        }
+        let hasilkurang = kurang(10, 12);
+
+        // Menampilkan hasil di dalam elemen <p> dengan id "hasil"
+            document.getElementById("hasil_tambah").innerHTML = "Hasil penjumlahan: " + hasiltambah;
+            document.getElementById("hasil_kali").innerHTML = "Hasil perkalian: " + hasilkali;
+            document.getElementById("hasil_bagi").innerHTML = "Hasil pembagian: " + hasilbagi;
+            document.getElementById("hasil_kurang").innerHTML = "Hasil pengurangan: " + hasilkurang;
+    </script>
+</body>
+</html>

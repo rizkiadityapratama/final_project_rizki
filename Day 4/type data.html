@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>belajar tipe data javascript</h1>
+    <p id="hasil"></p>
+    <script>
+        //tipe data scrpt(teks)
+        let namalengkap = "Rizki Aditya Pratama" ;//teks selalu dalam tanda kutip
+        console.log("namalengkap" + namalengkap );
+        
+        //tipe data number(angka)
+        let usia = 15;// angka tidak perlu tanda kutip
+        console.log("usia" + usia );
+
+        //tipe data array (daftar)
+         let hobi = ["bantai land of down","bermain bola","menonton timnas main","main game horor","belajar"];
+         console.log("hobi" + hobi);
+
+         //tipe data bottom (true/false)
+         let sudahmakan = true ; //nilai bottom hanya bisa true atau false
+         console.log("sudahmakan" + sudahmakan);
+
+         //tipe data objek (objek)
+         let identitas = {
+            namalengkap : "Rizki Aditya Pratama",
+            kelas : "10",
+            usia : 15
+         };
+         console.log ("identitas" + identitas );
+
+         //menampilkan hasil pada halaman HTML
+         document.getElementById("hasil").innerHTML =
+         "<b>Tipe Data:</b><br>" +
+         "nama lengkap(string) :" + namalengkap + "<br>" +
+         "usia(number) :" + usia + "<br>" +
+         "sudah makan(boolean):" + sudahmakan + "<br>" +
+         "hobi(array) :" + hobi + "<br>" +
+         "identitas(objek) : namalengkap :" + identitas. namalengkap + "kelas: " + identitas.kelas + ",usia : " + identitas.usia; 
+    </script>
+</body>
+</html>

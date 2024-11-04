@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Kontrol Empat Lampu</title> 
+    <style> 
+        .lampu-container { 
+            display: flex; 
+            flex-wrap: wrap; /* Membuat elemen terbungkus */ 
+            justify-content: center; /* Pusatkan elemen */ 
+            gap: 100px; /* Jarak antar elemen */ 
+            margin: 50px; 
+        } 
+        .lampu { 
+            text-align: center; 
+            padding: 10px; 
+            border-radius: 10px; 
+            width: 400px; 
+        } 
+        .bg-1 { 
+            background-image: url('/image/Desain Kamar Mandi Skandinavian dengan Lantai Kayu.jpg.'); /* Ganti dengan path gambar */ 
+        } 
+        .bg-2 { 
+            background-image: url('/image/Desain Kamar Mandi Skandinavian dengan Lantai Kayu.jpg.'); /* Ganti dengan path gambar */ 
+        } 
+        .bg-3 { 
+            background-image: url('/image/Desain Kamar Mandi Skandinavian dengan Lantai Kayu.jpg.'); /* Ganti dengan path gambar */ 
+        } 
+        .bg-4 { 
+            background-image: url('/image/Desain Kamar Mandi Skandinavian dengan Lantai Kayu.jpg.'); /* Ganti dengan path gambar */ 
+        } 
+        img { 
+            width: 100px; 
+            height: 150px; 
+        } 
+         
+    </style>
+</head> 
+<body> 
+    <h1>Kontrol Empat Lampu</h1> 
+ 
+    <!-- Baris 1: Lampu 1 (kiri) dan Lampu 2 (kanan) --> 
+    <div class="lampu-container"> 
+        <div class="lampu-section"> 
+            <h3>Lampu 1</h3> 
+            <img id="lampuImage1" src="../image/pic_bulboff.gif" alt="Lampu 1"> 
+            <p id="lampuStatus1">Lampu 1 Mati</p> 
+            <button onclick="trueOnLampu('lampuImage1', 'lampuStatus1', 'lampuTimer1')">Nyalakan Lampu 1</button> 
+            <p id="lampuTimer1"></p> 
+        </div> 
+ 
+        <div class="lampu-section"> 
+            <h3>Lampu 2</h3> 
+            <img id="lampuImage2" src="../image/pic_bulboff.gif" alt="Lampu 2"> 
+            <p id="lampuStatus2">Lampu 2 Mati</p> 
+            <button onclick="trueOnLampu('lampuImage2', 'lampuStatus2', 'lampuTimer2')">Nyalakan Lampu 2</button> 
+            <p id="lampuTimer2"></p> 
+        </div> 
+    </div> 
+ 
+    <!-- Baris 2: Lampu 3 (kiri) dan Lampu 4 (kanan) --> 
+    <div class="lampu-container"> 
+        <div class="lampu-section"> 
+            <h3>Lampu 3</h3> 
+            <img id="lampuImage3" src="../image/pic_bulboff.gif" alt="Lampu 3"> 
+            <p id="lampuStatus3">Lampu 3 Mati</p> 
+            <button onclick="trueOnLampu('lampuImage3', 'lampuStatus3', 'lampuTimer3')">Nyalakan Lampu 3</button> 
+            <p id="lampuTimer3"></p> 
+        </div> 
+ 
+        <div class="lampu-section"> 
+            <h3>Lampu 4</h3> 
+            <img id="lampuImage4" src="../image/pic_bulboff.gif" alt="Lampu 4"> 
+            <p id="lampuStatus4">Lampu 4 Mati</p> 
+            <button onclick="trueOnLampu('lampuImage4', 'lampuStatus4', 'lampuTimer4')">Nyalakan Lampu 4</button> 
+            <p id="lampuTimer4"></p> 
+        </div> 
+    </div> 
+ 
+    <script> 
+        function trueOnLampu(imageId, statusId, timerId) { 
+            document.getElementById(imageId).src = "../image/pic_bulbon.gif"; 
+            document.getElementById(statusId).innerText = "Lampu Menyala"; 
+ 
+            let countdown = 3; // Mengatur timer menjadi 3 detik 
+            document.getElementById(timerId).innerText = "Waktu: " + countdown + " Detik"; 
+ 
+            let timerInterval = setInterval(function () { 
+                countdown--; 
+                if (countdown > 0) { 
+                    document.getElementById(timerId).innerText = "Waktu: " + countdown + " Detik"; 
+                } else { 
+                    clearInterval(timerInterval); // Mematikan interval ketika waktu habis 
+                    document.getElementById(timerId).innerText = ""; 
+                    document.getElementById(imageId).src = "../image/pic_bulboff.gif"; 
+                    document.getElementById(statusId).innerText = "Lampu Mati"; 
+                } 
+            }, 1000); 
+        } 
+    </script> 
+</body> 
+</html>

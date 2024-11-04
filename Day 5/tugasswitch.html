@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>pilih bulan berdasarkan nomor</h2>
+    
+    <!-- form input untuk nomor bulan-->
+    <label for="hari">masukan nomor bulan (1-12) :</label>
+    <input type="number" id="bulan" placeholder="masukan nomor bulan"/>
+    <button onclick="cekbulan()">cekbulan</button>
+<!--tempat menampilkan hasil -->
+<p id="hasilbulan"></p>
+<script>
+    // fungsi untuk mengecek hari berdasarkan nomor yang dimasukan
+    function cekbulan() {
+        // mengambil nilai dari input
+        var nomorbulan = parseInt(document.getElementById("bulan").value);
+        var hasil = "";
+
+        // menggunakan struktur switch untuk menetukan bulan
+        switch (nomorbulan) {
+            case 1:
+            hasil = "january.";
+            break;
+            case 2:
+            hasil = "februari.";
+            break;
+            case 3:
+            hasil = "maret.";
+            break;
+            case 4:
+            hasil = "april.";
+            break;
+            case 5:
+            hasil = "mei.";
+            break;
+            case 6:
+            hasil = "juni.";
+            break;
+            case 7:
+            hasil = "juli.";
+            break;
+            case 8:
+            hasil = "agustus.";
+            break;
+            case 9:
+            hasil = "september.";
+            break;
+            case 10:
+            hasil = "oktober.";
+            break;
+            case 11:
+            hasil = "november.";
+            break;
+            case 12:
+            hasil = "desember.";
+            break;
+           
+        }
+        //menampilkan hasil di elemen dengan id'hasilbulan'
+        document.getElementById("hasilbulan").innerHTML = hasil;
+
+    }
+</script>
+</html>
